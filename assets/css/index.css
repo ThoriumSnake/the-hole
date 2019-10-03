@@ -1,7 +1,7 @@
 .header{
     position: relative;
     width: 100%;
-    min-height: 85vh;
+    height: 100vh;
 }
 
 .header::before{
@@ -9,14 +9,13 @@
     content: "";
     position: absolute;
     width: 100%;
-    min-height: 85vh;
+    height: 100vh;
     background-image:  url('../../assets/images/hole_1.png');
-    background-size: 1366px 652.8px;
+    background-size: auto;
     filter: brightness(50%);
-    transform: scale(1.01);
 }
 
-.header-logo{
+.header-text-logo{
     z-index: 1;
     position: absolute;
     top: 40%;
