@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro|Montserrat|Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1{
+    color: rgba(255, 255, 255, 0.89);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 2.25rem;
+    line-height: 1.3;
+    letter-spacing: 0.5rem; 
+}

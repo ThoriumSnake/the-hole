@@ -1,0 +1,38 @@
+.header{
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+}
+
+.header::before{
+    z-index: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    min-height: 85vh;
+    background-image:  url('../../assets/images/hole_1.png');
+    background-size: 1366px 652.8px;
+    filter: brightness(50%);
+    transform: scale(1.01);
+}
+
+.header-logo{
+    z-index: 1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header-text{
+    color: rgba(255, 255, 255, 0.89);
+    font-family: 'Source Sans Pro', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-size: 0.8rem;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
