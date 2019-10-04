@@ -1,3 +1,13 @@
+.icon{
+    content: url('../../assets/images/eye_of_ender.png');
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: 20%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+}
+
 .header{
     position: relative;
     width: 100%;
@@ -14,8 +24,7 @@
     filter: brightness(50%);
 }
 
-.text-logo{
-    position: absolute;
+.header-text-logo{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -23,11 +32,11 @@
 
 .header-text{
     color: rgba(255, 255, 255, 0.89);
+    position: absolute;
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-size: 0.8rem;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -35,12 +44,12 @@
 
 .footer{
     color: rgba(255, 255, 255, 0.89);
+    position: absolute;
     letter-spacing: 0.2rem;
     font-size: 8px;
     opacity: 0.75;
     margin-bottom: 0;
     text-transform: uppercase;
-    position: absolute;
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
