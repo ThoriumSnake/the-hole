@@ -15,7 +15,7 @@
     filter: brightness(50%);
 }
 
-.header-text-logo{
+.text-logo{
     z-index: 1;
     position: absolute;
     top: 40%;
