@@ -17,13 +17,14 @@
 }
 
 @keyframes icon-rise{
-    0%{top: calc(50% - 110px);}
-    100%{top: 20%;}
+    0%{}
+    100%{top: 20%; opacity: 1;}
 }
 
 .header-icon{
     content: url('../../assets/images/eye_of_ender.png');
     position: absolute;
+    opacity: 0;
     height: 70px;
     width: 70px;
     top: calc(50% - 110px);
@@ -57,7 +58,7 @@
     left: calc(50% - 1px);
     width: 1px;
     height: 55px;
-    background: #ffffff;
+    background: white;
 }
 
 @keyframes opacity{
