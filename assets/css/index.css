@@ -1,5 +1,4 @@
 /*header*/
-
 .header{
     position: relative;
     width: 100%;
@@ -102,6 +101,7 @@
 
 /*buttons*/
 @keyframes button-fall{
+    0%{top: 60%;}
     100%{top: 80%;}
 }
 
@@ -157,4 +157,13 @@
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@keyframes article-visible{
+    0%{}
+    100%{opacity: 0;}
+}
+
+.article-visible{
+    animation: article-visible 0.75s ease forwards;
 }
