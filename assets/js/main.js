@@ -1,7 +1,12 @@
 var articleButtons = document.getElementsByClassName('art-button');
-var initPageElements = [document.getElementsByClassName('header-inner'), document.getElementsByClassName('header-icon'), document.getElementsByClassName('buttons'), document.getElementsByClassName('footer')];
+var header = document.getElementsByClassName('header')[0];
+var footer = document.getElementsByClassName('footer')[0];
+var initPageElements = [document.getElementsByClassName('header-inner'), document.getElementsByClassName('header-icon'), document.getElementsByClassName('buttons')];
 var activeArticle;
 var articlesWrapper = document.getElementsByClassName("articles")[0];
+
+//For timing appearence of scrollbar alongside article
+document.body.style.overflow = 'hidden';
 
 function HideInitialPage(){
     //For fixing the position and opacity of some elements, because their animations are removed
@@ -10,33 +15,89 @@ function HideInitialPage(){
     initPageElements[1][0].style.top = '20%';
     document.getElementsByClassName('buttons')[0].style.top = '80%';
 
-    for (let i = 0; i < initPageElements.length; i++) {
-        initPageElements[i][0].classList.add("article-is-visible");          
-    }
+    setTimeout(function(){
+        header.style.display = 'none'
+        footer.style.display = 'none'
+    }, 750);
 
-    document.getElementsByClassName('header')[0].style.display = 'none'
-    document.getElementsByClassName('footer')[0].style.display = 'none'
+    if(header.classList.contains('article-not-visible'))
+        header.classList.remove('article-not-visible');
+        footer.classList.remove('article-not-visible');
+
+    header.classList.add('article-is-visible');
+    footer.classList.add('article-is-visible');
+    
+    header.style.opacity = '0';
+    footer.style.opacity = '0';
+
+    for (let i = 0; i < initPageElements.length; i++) {
+        initPageElements[i][0].style.animation = 'none';  
+    }
 }
 
-function RevealArticle(){
+function ShowInitialPage(){
+    header.style.display = 'block'
+    footer.style.display = 'block'
+        //initPageElements[i][0].classList.remove("article-is-visible");
+    header.classList.add("article-not-visible");
+    footer.classList.add("article-not-visible");
+    
+    header.classList.remove("article-is-visible"); 
+    footer.classList.remove("article-is-visible");           
+}
+
+function ShowArticle(){
     articlesWrapper.style.display = 'flex'
     articlesWrapper.classList.add('article-fade-in');
-
     activeArticle.style.display = 'initial'
+}
+
+function CloseArticle(){
+    articlesWrapper.classList.add('article-fade-out');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){
+        articlesWrapper.style.display = 'none'
+        activeArticle.style.display = 'none'
+        articlesWrapper.classList.remove('article-fade-in');
+        articlesWrapper.classList.remove('article-fade-out');
+    }, 250);
 }
 
 function AddButtonListeners(){
     for (let item of articleButtons){
         item.addEventListener('click', function(){
             activeArticle = document.getElementsByClassName(item.classList[1])[1]
+            AddCloseButtonListener();
             HideInitialPage();
-            RevealArticle();
-        });
+
+            setTimeout(function(){
+                ShowArticle();
+            }, 350)
+
+            setTimeout(function(){
+                document.body.style.overflow = 'visible';
+            }, 700)
+        });       
     }
 }
 
+function AddCloseButtonListener(){
+    var closeBtn = null;
+    for (var i = 0; i < activeArticle.childNodes.length; i++) {
+        if (activeArticle.childNodes[i].className == 'close') {
+        closeBtn = activeArticle.childNodes[i];
+        break;
+        }        
+    }
+    closeBtn.addEventListener('click', function(){
+        CloseArticle();
+        //For allowing article fade out animation to play
+        setTimeout(function(){
+            ShowInitialPage();
+        }, 200)
+    })
+}
 AddButtonListeners();
-
 
 
 

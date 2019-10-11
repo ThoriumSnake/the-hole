@@ -163,24 +163,15 @@
     transform: translate(-50%, -50%);
 }
 
-/*articles*/
+/*article animations*/
 @keyframes article-is-visible{
-    0%{}
+    0%{opacity: 1;}
     100%{opacity: 0;}
 }
 
-.article-is-visible{
-    animation: article-is-visible 0.75s ease forwards;
-}
-
 @keyframes article-fade-in{
-    0%{opacity: 0;}
-    100%{opacity: 1;}
-}
-
-.article-fade-in{
-    animation: article-fade-in 0.325s ease-in-out forwards;
-    animation-delay: 0.30s;
+    0%{opacity: 0; transform: translateY(7px)}
+    100%{opacity: 1; transform: translateY(0);}
 }
 
 @keyframes article-not-visible{
@@ -188,21 +179,31 @@
     100%{opacity: 1;}
 }
 
-.article-not-visible{
-    animation: article-not-visible 0.325s ease-in-out forwards;
-    animation-delay: 0.400s;
+@keyframes article-fade-out{
+    0%{opacity: 1; transform: translateY(0)}
+    100%{opacity: 0; transform: translateY(7px)}
 }
 
-@keyframes article-fade-out{
-    0%{opacity: 1;}
-    100%{opacity: 0;}
+.article-is-visible{
+    animation: article-is-visible 0.75s ease forwards;
+}
+
+.article-fade-in{
+    animation: article-fade-in 0.325s ease-in-out forwards;
+    animation-delay: 0.30s;
+}
+
+.article-not-visible{
+    opacity: 0;
+    animation: article-not-visible 0.325s ease-in-out forwards;
+    animation-delay: 0.100s;
 }
 
 .article-fade-out{
-    opacity: 1;
     animation: article-fade-out 0.325s ease-in-out forwards;
 }
 
+/*articles*/
 .articles{
     display: none;
     position: relative;
