@@ -257,10 +257,37 @@
 
 .close{
     position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 15px;
+    right: 15px; 
+    border-radius: 100%;
+    border-color: transparent;
+    background-color: transparent;
+    transition: background 0.2s ease-in-out;
+    outline: none;
+}
+
+.close::before{
+    content: '';
+    position: absolute;
     height: 40px;
     width: 40px;
-    top: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../images/68747470733a2f2f63646e2e7261776769742e636f6d2f64616e6b6c616d6d65722f6279746573697a652d69636f6e732f6d61737465722f646973742f69636f6e732f636c6f73652e737667.svg');
+    background-size: 15px 15px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.close:hover{
+    background-color: rgba(51, 63, 83, 0.85);
+}
+
+.close:active{
+    background-color: rgba(87, 105, 134, 0.85);
 }
 
 span{
