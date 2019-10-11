@@ -9,7 +9,7 @@
     background-image:  url('../../assets/images/hole_1.png');
     background-size: auto;
     position: fixed;
-    filter: brightness(70%);
+    filter: brightness(50%);
 }
 
 /*header*/
